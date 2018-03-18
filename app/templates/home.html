@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for post in posts %}
+<h2>{{ post.header }}</h2>
+<p>{{ post.body }}</p>
+<ul>
+    {% for comment in post.comments %}
+    <li>{{ comment.author }} says {{ comment.body }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}
